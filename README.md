@@ -1,2 +1,12 @@
-# vote
-Retrieve relevant political information for users.
+# Vote!
+
+Voter information application.
+
+## Installation
+
+## Setup
+
+## Usage
+
+## Development
+
