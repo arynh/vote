@@ -20,7 +20,7 @@ Hopefully there's a pretty splash screen idk.
 
 ### Visual Layout
 
-* Four panes (the swipey android screen things): Local, state, national level political information, then a pane for the next election
+* [Four panes](https://developer.android.com/training/implementing-navigation/lateral.html) (the swipey android screen things): Local, state, national level political information, then a pane for the next election
 * Perhaps maintain the location input at the top above the pane selector.
 
 ### Information
@@ -45,3 +45,8 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 ## Development
 
 Continue ideation phase and transition into first prototype.
+
+### APIs
+* [Google Civic Information API](https://developers.google.com/civic-information/)
+* [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
+* Other political APIs
