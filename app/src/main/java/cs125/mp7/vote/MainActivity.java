@@ -137,9 +137,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            Fragment fragment = null;
+            switch (position) {
+                case 0:
+                    fragment = localTab.newInstance("hello", "there");
+                    break;
+                case 1:
+                    fragment = stateTab.newInstance("do", "you");
+                    break;
+                case 2:
+                    fragment = federalTab.newInstance("even", "work");
+                    break;
+            }
+            return fragment;
         }
 
         @Override
