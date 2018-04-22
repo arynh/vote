@@ -48,5 +48,7 @@ Continue ideation phase and transition into first prototype.
 
 ### APIs
 * [Google Civic Information API](https://developers.google.com/civic-information/)
+    * Elections
+    * Voter information based on location
 * [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start)
 * Other political APIs
