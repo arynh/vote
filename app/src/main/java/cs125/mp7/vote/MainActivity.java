@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String address = "none";
 
+    /**
+     * Google Civic Information API key
+     */
     private final String apiKey = BuildConfig.API_KEY;
 
     @Override
