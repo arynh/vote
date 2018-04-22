@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new localTab(), "Local Tab");
-        adapter.addFragment(new stateTab(), "State Tab");
-        adapter.addFragment(new federalTab(), "Federal Tab");
+        adapter.addFragment(new localTab(), "Local");
+        adapter.addFragment(new stateTab(), "State");
+        adapter.addFragment(new federalTab(), "Federal");
         viewPager.setAdapter(adapter);
     }
 
