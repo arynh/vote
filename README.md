@@ -22,6 +22,7 @@ Hopefully there's a pretty splash screen idk.
 
 * [Four panes](https://developer.android.com/training/implementing-navigation/lateral.html) (the swipey android screen things): Local, state, national level political information, then a pane for the next election
 * Perhaps maintain the location input at the top above the pane selector.
+* Cards similar to something like the transit app, or with a shadow.
 
 ### Information
 
