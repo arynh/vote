@@ -1,4 +1,4 @@
-# Vote!
+# Vote‽
 
 Voter information application
 
