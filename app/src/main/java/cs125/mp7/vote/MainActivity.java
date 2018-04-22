@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private String address = "none";
 
+    private final String apiKey = BuildConfig.API_KEY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
         locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeAlert();
-                Log.d(TAG, "onClick: address set to" + address);
-                Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
+                makeAlertAndRequest();
             }
         });
     }
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    private void makeAlert() {
+    private void makeAlertAndRequest() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Voter Address");
 
@@ -72,12 +72,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 address = input.getText().toString();
+                Log.d(TAG, "onClick: address set to: " + address);
+                Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+                Log.d(TAG, "onClick: address entry cancelled");
             }
         });
 
