@@ -25,7 +25,7 @@ android {
 
 def getApiKey(){
     Properties props = new Properties()
-    props.load(new FileInputStream(new File('secrets.properties')))
+    props.load(new FileInputStream(new File('properties.secrets')))
     return props['API_KEY']
 }
 
