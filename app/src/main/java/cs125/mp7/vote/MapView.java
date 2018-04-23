@@ -1,4 +1,4 @@
-package cs125.mp7.vote;
+/*package cs125.mp7.vote;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -24,4 +24,4 @@ public class MapView extends FrameLayout {
 
     public MapView(@NonNull Context context, GoogleMapOptions options) {
     }
-}
+}*/

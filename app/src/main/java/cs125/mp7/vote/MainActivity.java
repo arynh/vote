@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-    private String address = "none";
+    private static String address = "none";
 
     /**
      * Google Civic Information API key
      */
     private final String apiKey = BuildConfig.API_KEY;
 
-    public String getAddress() {
+    public static String getAddress() {
         return address;
     }
 
