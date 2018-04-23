@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 makeAlertAndRequest();
             }
         });
+
+        Toast.makeText(MainActivity.this, "Choose address using location button -->", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "onCreate: We got dis far");
     }
 
     private void setupViewPager(ViewPager viewPager) {
