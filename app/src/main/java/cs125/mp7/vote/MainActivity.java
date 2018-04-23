@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private final String apiKey = BuildConfig.API_KEY;
 
+    public String getAddress() {
+        return address;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new localTab(), "Local");
-        adapter.addFragment(new stateTab(), "State");
-        adapter.addFragment(new federalTab(), "Federal");
+        adapter.addFragment(new LocalTab(), "Local");
+        adapter.addFragment(new StateTab(), "State");
+        adapter.addFragment(new FederalTab(), "Federal");
+        adapter.addFragment(new LocationTab(), "Polling Location");
         viewPager.setAdapter(adapter);
     }
 

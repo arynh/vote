@@ -57,6 +57,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // Get element from your dataset at this position and replace the contents of the view
         // with that element
+
+        // set data
         viewHolder.getTextView1().setText(mDataSet[position].getName());
         viewHolder.getTextView2().setText(mDataSet[position].getParty() + " for "
                 + mDataSet[position].getOffice());
@@ -72,8 +74,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * Provide a reference to the type of views that you are using (custom ViewHolder)
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView1;
-        private final TextView textView2;
+        private TextView textView1 = null;
+        private TextView textView2 = null;
 
         public ViewHolder(View v) {
             super(v);
