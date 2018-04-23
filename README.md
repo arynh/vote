@@ -46,7 +46,7 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 ## Development
 
 - [x] Continue ideation phase and transition into first prototype.
-- [ ] Finish initial UI.
+- [x] Finish initial UI.
 - [ ] Design data flow.
 - [ ] Connect APIs to data pipeline.
 - [ ] Optimize and make it pretty.
