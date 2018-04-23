@@ -4,22 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    cardview:cardBackgroundColor="@color/no_party"
-    cardview:cardCornerRadius="4dp">
+    cardview:cardBackgroundColor="@color/cardview_light_background"
+    cardview:cardCornerRadius="6dp"
+    cardview:cardElevation="6dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical|start"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/icon"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="idk what I'm doing"
-            android:padding="2dip"
-            cardview:srcCompat="@drawable/ic_location_on_white_48px" />
+            android:padding="6dp"
+            android:text="D"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="64sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,16 +31,20 @@
 
             <TextView
                 android:id="@+id/label"
+                android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/app_name"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/size"
-                android:layout_width="wrap_content"
+                android:layout_width="369dp"
+                android:padding="4dp"
                 android:layout_height="wrap_content"
+                android:text="@string/isr_addr"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>

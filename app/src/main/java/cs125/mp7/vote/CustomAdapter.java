@@ -62,6 +62,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getTextView1().setText(mDataSet[position].getName());
         viewHolder.getTextView2().setText(mDataSet[position].getParty() + " for "
                 + mDataSet[position].getOffice());
+        viewHolder.getTextView3().setText(mDataSet[position].getParty().substring(0, 1));
+        if (mDataSet[position].getParty().equals("Democrat")) {
+            viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
+                    .getResources().getColor(R.color.Democrat));
+        } else if (mDataSet[position].getParty().equals("Republican")) {
+            viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
+                    .getResources().getColor(R.color.Republican));
+        } else if (mDataSet[position].getParty().equals("Green")) {
+            viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
+                    .getResources().getColor(R.color.Green));
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -76,6 +87,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView textView1 = null;
         private TextView textView2 = null;
+        private TextView textView3 = null;
 
         public ViewHolder(View v) {
             super(v);
@@ -88,6 +100,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             });
             textView1 = v.findViewById(R.id.label);
             textView2 = v.findViewById(R.id.size);
+            textView3 = v.findViewById(R.id.textView2);
         }
 
         public TextView getTextView1() {
@@ -96,6 +109,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public TextView getTextView2() {
             return textView2;
+        }
+
+        public TextView getTextView3() {
+            return textView3;
         }
     }
 }
