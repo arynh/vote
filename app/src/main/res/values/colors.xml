@@ -5,10 +5,10 @@
     <color name="colorAccent">#8c9eff</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name="democrat">#1565c0</color>
-    <color name="republican">#c62828</color>
-    <color name="libertarian">#f9a825</color>
-    <color name="green">#2e7d32</color>
-    <color name="constitution">#4527a0</color>
+    <color name="Democrat">#1565c0</color>
+    <color name="Republican">#c62828</color>
+    <color name="Libertarian">#f9a825</color>
+    <color name="Green">#2e7d32</color>
+    <color name="Constitution">#4527a0</color>
     <color name="no_party">#cccccc</color>
 </resources>
