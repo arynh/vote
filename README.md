@@ -20,13 +20,13 @@ Hopefully there's a pretty splash screen idk.
 
 ### Visual Layout
 
-* [Three panes](https://developer.android.com/training/implementing-navigation/lateral.html) (the swipey android screen things): Local, state, national level political information
+* [Four panes](https://developer.android.com/training/implementing-navigation/lateral.html) (the swipey android screen things): Local, state, national level political information, then polling locations.
 * Perhaps maintain the location input at the top above the pane selector.
 * Cards similar to something like the transit app, or with a shadow, hopefully just make it pretty.
 
 ### Information
 
-The panes should go in order of local $\rightarrow$ national to emphasize the importance local politics.
+The panes should go in order of local $\rightarrow$ national to emphasize the importance of local politics.
 
 #### Local
 
@@ -43,6 +43,11 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 
 * Congresspeople, important supreme court cases, congressional activities for the day, et cetera.
 
+#### Polling Place
+
+* Use Google Maps API to show location of polling place
+* Have ```Get Directions``` button.
+
 ## Development
 
 - [x] Continue ideation phase and transition into first prototype.
@@ -58,6 +63,7 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
     * Voter information based on location
 * ~~Google Maps Geocoding API~~ (The Google Civic Information API automatically geocodes given addresses and return a 400 error if the input address is unparsable.)
 * Other political APIs?
+* [Google Maps Android API](https://developers.google.com/maps/documentation/android-api/)
 
     #### To use an API key:
     * Create ```.../vote/secrets.properties``` and in it place ```API_KEY=<the api key here>```.
