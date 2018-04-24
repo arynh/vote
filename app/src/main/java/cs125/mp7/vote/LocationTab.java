@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.MapView;
@@ -22,7 +21,7 @@ public class LocationTab extends Fragment {
 
     TextView textView1;
     TextView textView2;
-    ImageView imageView;
+    //ImageView imageView;
     MapView m;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,9 +30,9 @@ public class LocationTab extends Fragment {
         textView1 = rootView.findViewById(R.id.current_address_sign);
         textView2 = rootView.findViewById(R.id.address);
         textView1.setText(MainActivity.getAddress());
-        imageView = rootView.findViewById(R.id.imageView);
-        //m = (MapView) rootView.findViewById(R.id.mapView);
-        //m.onCreate(savedInstanceState);
+        //imageView = rootView.findViewById(R.id.imageView);
+        m = rootView.findViewById(R.id.mapView);
+        m.onCreate(savedInstanceState);
 
         return rootView;
     }
@@ -41,24 +40,24 @@ public class LocationTab extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //m.onResume();
+        m.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //m.onPause();
+        m.onPause();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //m.onDestroy();
+        m.onDestroy();
     }
 
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        //m.onLowMemory();
+        m.onLowMemory();
     }
 }

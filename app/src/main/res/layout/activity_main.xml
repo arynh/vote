@@ -37,19 +37,29 @@
                 android:id="@+id/localTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_local" />
+                android:text="@string/tab_text_local"
+                app:fontFamily="@font/cabin" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/stateTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_state" />
+                android:text="@string/tab_text_state"
+                app:fontFamily="@font/cabin" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/federalTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_federal" />
+                android:text="@string/tab_text_federal"
+                app:fontFamily="@font/cabin" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/locationTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_text_location"
+                app:fontFamily="@font/cabin" />
 
         </android.support.design.widget.TabLayout>
 
@@ -64,8 +74,8 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:backgroundTint="@color/colorPrimary"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
