@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.MapView;
+
 /**
  * A simple {@link Fragment} subclass.
  **/
@@ -21,6 +23,7 @@ public class LocationTab extends Fragment {
     TextView textView1;
     TextView textView2;
     ImageView imageView;
+    MapView m;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,7 +32,33 @@ public class LocationTab extends Fragment {
         textView2 = rootView.findViewById(R.id.address);
         textView1.setText(MainActivity.getAddress());
         imageView = rootView.findViewById(R.id.imageView);
+        //m = (MapView) rootView.findViewById(R.id.mapView);
+        //m.onCreate(savedInstanceState);
 
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //m.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //m.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //m.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        //m.onLowMemory();
     }
 }
