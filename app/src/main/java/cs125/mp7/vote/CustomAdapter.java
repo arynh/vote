@@ -85,9 +85,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * Provide a reference to the type of views that you are using (custom ViewHolder)
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView1 = null;
-        private TextView textView2 = null;
-        private TextView textView3 = null;
+        private TextView textView1;
+        private TextView textView2;
+        private TextView textView3;
 
         public ViewHolder(View v) {
             super(v);

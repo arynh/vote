@@ -98,5 +98,26 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    public void makeInformation() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Candidate Information");
+
+        // Set up the input
+        final EditText input = new EditText(this);
+        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        builder.setView(input);
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                address = input.getText().toString();
+                Log.d(TAG, "onClick: address set to: " + address);
+                Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
+    }
 
 }

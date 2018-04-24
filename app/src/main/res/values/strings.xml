@@ -8,4 +8,5 @@
     <string name="text_input_prompt">Voting Location Address</string>
     <string name="curr_addr">Current Address:</string>
     <string name="isr_addr">1012 W. Illinois St.\nUrbana, IL 60089</string>
+    <string name="title_activity_location_map">Polling Location</string>
 </resources>

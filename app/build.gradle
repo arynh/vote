@@ -17,13 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         applicationVariants.all { variant ->
-            variant.buildConfigField "String", "API_KEY", "\""+getApiKey()+"\""
+            variant.buildConfigField "String", "API_KEY", "\"" + getApiKey() + "\""
         }
     }
 
 }
 
-def getApiKey(){
+def getApiKey() {
     Properties props = new Properties()
     props.load(new FileInputStream(new File('properties.secrets')))
     return props['API_KEY']
