@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 /**
@@ -21,17 +21,14 @@ public class LocationTab extends Fragment {
     // TODO: declare any buttons and whatnot up here
 
     TextView textView1;
-    TextView textView2;
-    Button button;
+    ImageButton button;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.location_tab, container, false);
         textView1 = rootView.findViewById(R.id.current_address_sign);
-        textView2 = rootView.findViewById(R.id.address);
         textView1.setText(MainActivity.getAddress());
-        button = rootView.findViewById(R.id.mapButton);
-        button.setText("View Polling Location");
+        button = rootView.findViewById(R.id.viewPollMap);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
