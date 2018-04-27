@@ -12,6 +12,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,9 +101,36 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onClick: address entry cancelled");
             }
         });
-
         builder.show();
     }
 
+    public void startAPICall() {
+        String url = "https://www.googleapis.com/civicinfo/v2/representatives?address="
+                + getAddress(address)
+                + "&key=" + apiKey;
+        final android.content.Context context = getApplicationContext();
+        try {
+            JsonObjectRequest a = new JsonObjectRequest(
+                    Request.Method.GET,
+                    url,
+                    null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(final JSONObject response) {
+                            Log.d(TAG, response.toString());
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(final VolleyError error) {
+                    Log.w(TAG, error.toString());
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    private String getAddress(String address) {
+        return address.replaceAll(" ","%20");
+    }
 }
