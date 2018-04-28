@@ -13,6 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 /**
  * A simple {@link Fragment} subclass.
  **/
@@ -21,6 +26,17 @@ public class LocalTab extends Fragment {
     private static final String TAG = "localTabFragment";
 
     // TODO: declare any buttons and whatnot up here
+
+    public CardData[] makeLocalData(final String input) {
+        int numCards = 0;
+        JsonElement jsonElement = new JsonParser().parse(input);
+        JsonObject bigObj = jsonElement.getAsJsonObject();
+        JsonArray officials = bigObj.get("officials").getAsJsonArray();
+        for (JsonElement official : officials) {
+            // TODO: finish the parsing
+            //official.getAsJsonObject()
+        }
+    }
 
     @Nullable
     @Override
@@ -39,47 +55,13 @@ public class LocalTab extends Fragment {
 
         // this is data for recycler view
         // TODO: Get data from the API; don't hardcode it lel
-        CardData cardData[] = {
-                new CardData("Jill Stein", "Green", "President" +
-                        "\n Many informations"),
-                new CardData("J.B. Pritzker", "Democrat", "Governor" +
-                        "\n and many more informations"),
-                new CardData("Bruce Rauner", "Republican", "Governor" +
-                        "\n Hopefully we can put useful things"),
-                new CardData("sth swnt", "Tea", "President" +
-                        "\n inside these cards"),
-                new CardData("Jill Stein", "Green", "President" +
-                        "\n Many informations"),
-                new CardData("J.B. Pritzker", "Democrat", "Governor" +
-                        "\n and many more informations"),
-                new CardData("Bruce Rauner", "Republican", "Governor" +
-                        "\n Hopefully we can put useful things"),
-                new CardData("sth swnt", "Tea", "President" +
-                        "\n inside these cards"),
-                new CardData("Jill Stein", "Green", "President" +
-                        "\n Many informations"),
-                new CardData("J.B. Pritzker", "Democrat", "Governor" +
-                        "\n and many more informations"),
-                new CardData("Bruce Rauner", "Republican", "Governor" +
-                        "\n Hopefully we can put useful things"),
-                new CardData("sth swnt", "Tea", "President" +
-                        "\n inside these cards"),
-                new CardData("Jill Stein", "Green", "President" +
-                        "\n Many informations"),
-                new CardData("J.B. Pritzker", "Democrat", "Governor" +
-                        "\n and many more informations"),
-                new CardData("Bruce Rauner", "Republican", "Governor" +
-                        "\n Hopefully we can put useful things"),
-                new CardData("sth swnt", "Tea", "President" +
-                        "\n inside these cards")
-        };
 
         Log.d(TAG, "onCreateView: setting up layout manager");
 
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         // 3. create an adapter
-        CustomAdapter mAdapter = new CustomAdapter(cardData);
+        CustomAdapter mAdapter = new CustomAdapter(makeLocalData(MainActivity.getJsonInformation()));
         // 4. set adapter
         recyclerView.setAdapter(mAdapter);
         // 5. set item animator to DefaultAnimator

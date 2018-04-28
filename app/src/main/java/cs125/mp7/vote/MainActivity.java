@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static RequestQueue requestQueue;
 
+    private static String jsonInformation;
+
     /**
      * Google Civic Information API key
      */
@@ -108,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    public static String getJsonInformation() {
+        return jsonInformation;
+    }
+
+    private String getAddress(String address) {
+        return address.replaceAll(" ", "%20");
+    }
+
+    public static void setJsonInformation(String jsonInformation) {
+        MainActivity.jsonInformation = jsonInformation;
+    }
+
     /**
      * Send the address to the API and attempt to get a response.
      */
@@ -129,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             Log.d(TAG, response.toString());
+                            setJsonInformation(response.toString());
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -144,9 +159,5 @@ public class MainActivity extends AppCompatActivity {
             toast2.show();
             e.printStackTrace();
         }
-    }
-
-    private String getAddress(String address) {
-        return address.replaceAll(" ","%20");
     }
 }
