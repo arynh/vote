@@ -29,13 +29,16 @@ public class LocalTab extends Fragment {
 
     public CardData[] makeLocalData(final String input) {
         int numCards = 0;
-        JsonElement jsonElement = new JsonParser().parse(input);
-        JsonObject bigObj = jsonElement.getAsJsonObject();
-        JsonArray officials = bigObj.get("officials").getAsJsonArray();
-        for (JsonElement official : officials) {
-            // TODO: finish the parsing
-            //official.getAsJsonObject()
+        try {
+            JsonElement jsonElement = new JsonParser().parse(input);
+            JsonObject bigObj = jsonElement.getAsJsonObject();
+            JsonArray officials = bigObj.get("officials").getAsJsonArray();
+            for (JsonElement official : officials) {
+            }
+        } catch (Exception e) {
+            Log.d(TAG, "makeLocalData: " + e.toString());
         }
+        return data;
     }
 
     @Nullable
