@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void makeAlertAndRequest() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Voter Address");
+        builder.setTitle("Voter Address (Street, City, State)");
 
         // Set up the input
         final EditText input = new EditText(this);
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 address = input.getText().toString();
                 Log.d(TAG, "onClick: address set to: " + address);
                 Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
+                startAPICall();
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -106,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onClick: address entry cancelled");
             }
         });
-
         builder.show();
     }
 
@@ -128,34 +128,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
             }
         });
-
         builder.show();
     }
+
     public void startAPICall() {
         String url = "https://www.googleapis.com/civicinfo/v2/representatives?address="
                 + getAddress(address)
                 + "&key=" + apiKey;
-        final android.content.Context context = getApplicationContext();
-        Log.d("I was called: ", url);
-        try {
-            JsonObjectRequest a = new JsonObjectRequest(
-                    Request.Method.GET,
-                    url,
-                    null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(final JSONObject response) {
-                            Log.d("Here is the response: ", response.toString());
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(final VolleyError error) {
-                    Log.w("Here is the response: ", error.toString());
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     private String getAddress(String address) {
