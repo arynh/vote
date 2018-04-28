@@ -55,6 +55,7 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 - [ ] Design data flow.
 - [ ] Connect APIs to data pipeline.
 - [ ] Optimize and make it pretty.
+- [ ] Make seth supreme leader of the free world.
 
 ### APIs
 

@@ -17,16 +17,16 @@ import android.view.ViewGroup;
  * A simple {@link Fragment} subclass.
  **/
 
-public class localTab extends Fragment {
-    private static final String TAG = "localTabFragment";
+public class StateTab extends Fragment {
+    private static final String TAG = "StateTabFragment";
 
     // TODO: declare any buttons and whatnot up here
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: creating view for local tab");
-        
+        Log.d(TAG, "onCreateView: creating view for state tab");
+
         View view = inflater.inflate(R.layout.fragment_local_tab, container, false);
 
         // TODO: make sure to add listeners for buttons and et cetera here

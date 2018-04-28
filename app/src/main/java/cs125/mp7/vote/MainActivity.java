@@ -12,18 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,12 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-    private String address = "none";
+    private static String address = "none";
 
     /**
      * Google Civic Information API key
      */
     private final String apiKey = BuildConfig.API_KEY;
+
+    public static String getAddress() {
+        return address;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new localTab(), "Local");
-        adapter.addFragment(new stateTab(), "State");
-        adapter.addFragment(new federalTab(), "Federal");
+        adapter.addFragment(new LocalTab(), "Local");
+        adapter.addFragment(new StateTab(), "State");
+        adapter.addFragment(new FederalTab(), "Federal");
+        adapter.addFragment(new LocationTab(), "Polling Location");
         viewPager.setAdapter(adapter);
     }
 
@@ -101,36 +94,30 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onClick: address entry cancelled");
             }
         });
+
         builder.show();
     }
 
-    public void startAPICall() {
-        String url = "https://www.googleapis.com/civicinfo/v2/representatives?address="
-                + getAddress(address)
-                + "&key=" + apiKey;
-        final android.content.Context context = getApplicationContext();
-        try {
-            JsonObjectRequest a = new JsonObjectRequest(
-                    Request.Method.GET,
-                    url,
-                    null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(final JSONObject response) {
-                            Log.d(TAG, response.toString());
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(final VolleyError error) {
-                    Log.w(TAG, error.toString());
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void makeInformation() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Candidate Information");
+
+        // Set up the input
+        final EditText input = new EditText(this);
+        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        builder.setView(input);
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                address = input.getText().toString();
+                Log.d(TAG, "onClick: address set to: " + address);
+                Toast.makeText(MainActivity.this, "Address Set!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.show();
     }
 
-    private String getAddress(String address) {
-        return address.replaceAll(" ","%20");
-    }
 }

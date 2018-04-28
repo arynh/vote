@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    tools:context="cs125.mp7.vote.localTab">
+    tools:context="cs125.mp7.vote.LocalTab">
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/recyclerViewLocal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".localTab" />
+        tools:context=".LocalTab" />
 </RelativeLayout>

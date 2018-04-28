@@ -3,6 +3,11 @@
     <string name="tab_text_local">Local</string>
     <string name="tab_text_state">State</string>
     <string name="tab_text_federal">Federal</string>
+    <string name="tab_text_location">Polling Location</string>
     <string name="action_settings">Settings</string>
     <string name="text_input_prompt">Voting Location Address</string>
+    <string name="curr_addr">Current Address:</string>
+    <string name="isr_addr">1012 W. Illinois St.\nUrbana, IL 60089</string>
+    <string name="title_activity_location_map">Polling Location</string>
+    <string name="instructions">Click the button below to view your polling location.</string>
 </resources>
