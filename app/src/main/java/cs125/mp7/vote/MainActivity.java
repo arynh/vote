@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static RequestQueue requestQueue;
 
-    private static String jsonInformation;
+    private static String jsonInformation = "";
 
     /**
      * Google Civic Information API key
@@ -74,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new LocalTab(), "Local");
-        adapter.addFragment(new StateTab(), "State");
-        adapter.addFragment(new FederalTab(), "Federal");
         adapter.addFragment(new LocationTab(), "Polling Location");
         viewPager.setAdapter(adapter);
     }
@@ -123,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Send the address to the API and attempt to get a response.
+     * Send the address to the API and attempt to get a JSON response.
      */
     void startAPICall() {
         String url = "https://www.googleapis.com/civicinfo/v2/representatives?address="

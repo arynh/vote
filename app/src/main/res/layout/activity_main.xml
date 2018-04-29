@@ -37,21 +37,7 @@
                 android:id="@+id/localTab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tab_text_local"
-                app:fontFamily="@font/roboto" />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/stateTab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_text_state"
-                app:fontFamily="@font/roboto" />
-
-            <android.support.design.widget.TabItem
-                android:id="@+id/federalTab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tab_text_federal"
+                android:text="@string/tab_text_reps"
                 app:fontFamily="@font/roboto" />
 
             <android.support.design.widget.TabItem

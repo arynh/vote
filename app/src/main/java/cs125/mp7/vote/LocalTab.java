@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,16 +28,42 @@ public class LocalTab extends Fragment {
 
     // TODO: declare any buttons and whatnot up here
 
+    public void reloadTab() {
+        // Reload current fragment
+        Fragment frg = null;
+        frg = getFragmentManager().findFragmentByTag("localTabFragment");
+        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.detach(frg);
+        ft.attach(frg);
+        ft.commit();
+    }
+
     public CardData[] makeLocalData(final String input) {
         int numCards = 0;
+        JsonArray officials;
         try {
             JsonElement jsonElement = new JsonParser().parse(input);
             JsonObject bigObj = jsonElement.getAsJsonObject();
-            JsonArray officials = bigObj.get("officials").getAsJsonArray();
-            for (JsonElement official : officials) {
-            }
+            officials = bigObj.get("officials").getAsJsonArray();
         } catch (Exception e) {
-            Log.d(TAG, "makeLocalData: " + e.toString());
+            Log.e(TAG, "makeLocalData: " + e.toString());
+            CardData[] data = new CardData[1];
+            data[0] = new CardData("no", "data", "yet");
+            return data;
+        }
+        for (JsonElement official : officials) {
+            numCards++;
+        }
+        CardData[] data = new CardData[numCards];
+        String name;
+        String party;
+        String office;
+        for (int index = 0; index < data.length; index++) {
+            name = officials.get(index).getAsJsonObject().get("name").getAsString();
+            party = officials.get(index).getAsJsonObject().get("party").getAsString();
+            //office = officials.get(index).getAsJsonObject().get("office").getAsString();
+            office = "oop";
+            data[index] = new CardData(name, party, office);
         }
         return data;
     }

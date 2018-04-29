@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Vote!</string>
-    <string name="tab_text_local">Local</string>
-    <string name="tab_text_state">State</string>
-    <string name="tab_text_federal">Federal</string>
+    <string name="tab_text_reps">Representatives</string>
     <string name="tab_text_location">Polling Location</string>
     <string name="action_settings">Settings</string>
     <string name="text_input_prompt">Voting Location Address</string>

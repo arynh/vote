@@ -16,7 +16,6 @@
 
 package cs125.mp7.vote;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -64,7 +63,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getTextView2().setText(mDataSet[position].getParty() + " for "
                 + mDataSet[position].getOffice());
         viewHolder.getTextView3().setText(mDataSet[position].getParty().substring(0, 1));
-        if (mDataSet[position].getParty().equals("Democrat")) {
+        if (mDataSet[position].getParty().equals("Democratic")) {
             viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
                     .getResources().getColor(R.color.Democrat));
         } else if (mDataSet[position].getParty().equals("Republican")) {
@@ -73,6 +72,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         } else if (mDataSet[position].getParty().equals("Green")) {
             viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
                     .getResources().getColor(R.color.Green));
+        } else if (mDataSet[position].getParty().equals("Unknown")) {
+            viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
+                    .getResources().getColor(R.color.no_party));
         }
     }
 
