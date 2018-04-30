@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private static RequestQueue requestQueue;
 
     private static String jsonInformation = "";
-
     /**
      * Google Civic Information API key
      */
