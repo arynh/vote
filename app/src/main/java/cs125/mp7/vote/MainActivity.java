@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static RequestQueue requestQueue;
 
-    private static String jsonInformationTemp = "";
+    private static String jsonInformation = "";
 
-    private static String jsonInformation = "{\n" +
+    private static String jsonInformationTemp = "{\n" +
             " \"kind\": \"civicinfo#representativeInfoResponse\",\n" +
             " \"normalizedInput\": {\n" +
             "  \"line1\": \"1012 West Illinois Street\",\n" +

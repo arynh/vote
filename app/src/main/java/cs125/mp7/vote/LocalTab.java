@@ -52,7 +52,8 @@ public class LocalTab extends Fragment {
         } catch (Exception e) {
             Log.e(TAG, "makeLocalData: " + e.toString());
             CardData[] data = new CardData[1];
-            data[0] = new CardData("no", "data", "yet");
+            data[0] = new CardData("No data yet.", "Use the location button to set\n" +
+                    "the voter address, then use the\nrefresh button to display officials.", "");
             return data;
         }
         for (JsonElement official : officials) {
