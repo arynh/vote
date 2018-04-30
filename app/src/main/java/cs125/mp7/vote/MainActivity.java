@@ -991,7 +991,7 @@ public class MainActivity extends AppCompatActivity {
         return jsonInformation;
     }
 
-    private String getAddress(String address) {
+    public static String getParsedAddress(String address) {
         return address.replaceAll(" ", "%20");
     }
 
@@ -1004,7 +1004,7 @@ public class MainActivity extends AppCompatActivity {
      */
     void startAPICall() {
         String url = "https://www.googleapis.com/civicinfo/v2/representatives?address="
-                + getAddress(address)
+                + getParsedAddress(address)
                 + "&key=" + apiKey;
         final android.content.Context context = getApplicationContext();
         final Toast toast = Toast.makeText(context,

@@ -38,7 +38,11 @@ public class LocationMap extends FragmentActivity implements OnMapReadyCallback 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(34, -20);
+        LatLng sydney = new LatLng(40.1164, -88.2434);
+        String url =
+                "https://maps.googleapis.com/maps/api/geocode/json?address="
+                        + MainActivity.getParsedAddress(MainActivity.getAddress())
+                        + "&key=AIzaSyCrB8KnIKdPZ7WMLRB-IaCCmrAmQqPZXVo";
 
         // TODO: get the coordinates of place here
 
