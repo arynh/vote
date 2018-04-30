@@ -4,6 +4,7 @@ package cs125.mp7.vote;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -18,8 +19,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import org.json.JSONArray;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -117,12 +116,15 @@ public class LocalTab extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewLocal);
 
-        Log.d(TAG, "onCreateView: making data for recycler view");
-
-        // this is data for recycler view
-        // TODO: Get data from the API; don't hardcode it lel
-
         Log.d(TAG, "onCreateView: setting up layout manager");
+
+        final FloatingActionButton fabReload = getView().findViewById(R.id.refreshButton);
+        fabReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reloadTab();
+            }
+        });
 
         // 2. set layoutManger
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
