@@ -39,6 +39,7 @@ public class LocalTab extends Fragment {
     }
 
     public CardData[] makeLocalData(final String input) {
+        //Log.d(TAG, "this was called");
         int numCards = 0;
         JsonArray officials;
         try {
@@ -59,10 +60,20 @@ public class LocalTab extends Fragment {
         String party;
         String office;
         for (int index = 0; index < data.length; index++) {
-            name = officials.get(index).getAsJsonObject().get("name").getAsString();
-            party = officials.get(index).getAsJsonObject().get("party").getAsString();
+            try {
+                name = officials.get(index).getAsJsonObject().get("name").getAsString();
+            } catch (Exception e) {
+                Log.e(TAG,"Name was not avaliable");
+                name = "No Name Avaliable";
+            }
+            try {
+                party = officials.get(index).getAsJsonObject().get("party").getAsString();
+            } catch (Exception e) {
+                Log.e(TAG,"Party was not avaliable");
+                party = "No Name Avaliable";
+            }
             //office = officials.get(index).getAsJsonObject().get("office").getAsString();
-            office = "oop";
+            office = "President";
             data[index] = new CardData(name, party, office);
         }
         return data;

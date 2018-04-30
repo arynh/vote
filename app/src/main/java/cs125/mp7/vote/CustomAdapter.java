@@ -60,7 +60,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // set data
         viewHolder.getTextView1().setText(mDataSet[position].getName());
-        viewHolder.getTextView2().setText(mDataSet[position].getParty() + " for "
+        viewHolder.getTextView2().setText(mDataSet[position].getParty() + "\n"
                 + mDataSet[position].getOffice());
         viewHolder.getTextView3().setText(mDataSet[position].getParty().substring(0, 1));
         if (mDataSet[position].getParty().equals("Democratic")) {
