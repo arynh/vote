@@ -63,7 +63,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.getTextView2().setText(mDataSet[position].getParty() + "\n"
                 + mDataSet[position].getOffice());
         viewHolder.getTextView3().setText(mDataSet[position].getParty().substring(0, 1));
-        if (mDataSet[position].getParty().equals("Democratic")) {
+        if (mDataSet[position].getParty().equals("Democratic") || mDataSet[position].getParty().equals("Democrat")) {
             viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
                     .getResources().getColor(R.color.Democrat));
         } else if (mDataSet[position].getParty().equals("Republican")) {
@@ -72,7 +72,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         } else if (mDataSet[position].getParty().equals("Green")) {
             viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
                     .getResources().getColor(R.color.Green));
-        } else if (mDataSet[position].getParty().equals("Unknown")) {
+        } else {
             viewHolder.getTextView3().setTextColor(viewHolder.getTextView3()
                     .getResources().getColor(R.color.no_party));
         }
