@@ -53,7 +53,8 @@ public class LocationMap extends FragmentActivity implements OnMapReadyCallback 
         String url =
                 "https://maps.googleapis.com/maps/api/geocode/json?address="
                         + MainActivity.getParsedAddress(MainActivity.getAddress())
-                        + "&key=AIzaSyCrB8KnIKdPZ7WMLRB-IaCCmrAmQqPZXVo";
+                        + "&key=AIzaSyC4cgoN83zMMVsdJtPui9CBPZJwtvFnyR4";
+        Log.d(TAG, "startApiCall: Url: " + url);
         final android.content.Context context = getApplicationContext();
         final Toast toast = Toast.makeText(context,
                 "Retrieving data . . .",
@@ -119,12 +120,8 @@ public class LocationMap extends FragmentActivity implements OnMapReadyCallback 
 
         mMap = googleMap;
 
-        float counter = 1024;
-        while (getCoordinates() == null) {
-            counter *= 3.14;
-        }
-
         // Add a marker in Sydney and move the camera
+        Log.d(TAG, "onMapReady: " + getCoordinates());
         LatLng sydney = stringToLatLng(getCoordinates());
 
         // TODO: get the coordinates of place here

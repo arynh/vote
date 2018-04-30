@@ -952,8 +952,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new LocalTab(), "Candidates");
-        adapter.addFragment(new LocationTab(), "Polling Location");
+        adapter.addFragment(new LocalTab(), "Representatives");
+        //adapter.addFragment(new LocationTab(), "Polling Location");
         viewPager.setAdapter(adapter);
     }
 
