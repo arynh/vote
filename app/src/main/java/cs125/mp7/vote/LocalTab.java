@@ -32,7 +32,7 @@ public class LocalTab extends Fragment {
     public void reloadTab() {
         // Reload current fragment
         Fragment frg = null;
-        frg = getFragmentManager().findFragmentByTag("localTabFragment");
+        frg = this;
         final FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.detach(frg);
         ft.attach(frg);
@@ -118,7 +118,7 @@ public class LocalTab extends Fragment {
 
         Log.d(TAG, "onCreateView: setting up layout manager");
 
-        final FloatingActionButton fabReload = getView().findViewById(R.id.refreshButton);
+        final FloatingActionButton fabReload = view.findViewById(R.id.refreshButton);
         fabReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
