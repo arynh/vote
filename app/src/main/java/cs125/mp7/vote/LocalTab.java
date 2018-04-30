@@ -42,16 +42,16 @@ public class LocalTab extends Fragment {
         //Log.d(TAG, "this was called");
         int numCards = 0;
         JsonArray officials;
-        try {
+        //try {
             JsonElement jsonElement = new JsonParser().parse(input);
             JsonObject bigObj = jsonElement.getAsJsonObject();
             officials = bigObj.get("officials").getAsJsonArray();
-        } catch (Exception e) {
-            Log.e(TAG, "makeLocalData: " + e.toString());
-            CardData[] data = new CardData[1];
-            data[0] = new CardData("no", "data", "yet");
-            return data;
-        }
+        //} catch (Exception e) {
+        //    Log.e(TAG, "makeLocalData: " + e.toString());
+        //    CardData[] data = new CardData[1];
+        //    data[0] = new CardData("no", "data", "yet");
+        //    return data;
+        //}
         for (JsonElement official : officials) {
             numCards++;
         }
