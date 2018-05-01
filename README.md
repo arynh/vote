@@ -52,9 +52,10 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 
 - [x] Continue ideation phase and transition into first prototype.
 - [x] Finish initial UI.
-- [ ] Design data flow.
-- [ ] Connect APIs to data pipeline.
+- [x] Design data flow.
+- [x] Connect APIs to data pipeline.
 - [ ] Optimize and make it pretty.
+- [ ] Redesign the app to include more information
 - [ ] Make seth supreme leader of the free world.
 
 ### APIs
