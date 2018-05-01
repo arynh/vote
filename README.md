@@ -63,7 +63,7 @@ The panes should go in order of local $\rightarrow$ national to emphasize the im
 * [Google Civic Information API](https://developers.google.com/civic-information/)
     * Elections
     * Voter information based on location
-* ~~Google Maps Geocoding API~~ (The Google Civic Information API automatically geocodes given addresses and return a 400 error if the input address is unparsable.)
+* Google Maps Geocoding API (The Google Civic Information API automatically geocodes given addresses and return a 400 error if the input address is unparsable.)
 * Other political APIs?
 * [Google Maps Android API](https://developers.google.com/maps/documentation/android-api/)
 
